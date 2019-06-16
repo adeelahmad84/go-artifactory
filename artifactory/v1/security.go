@@ -409,6 +409,21 @@ func (s *SecurityService) CreateApiKey(ctx context.Context) (*ApiKey, *http.Resp
 	return v, resp, err
 }
 
+// Create an API key for another user. Returns an error if API key already exists - use regenerate API key instead.
+// Since: 4.3.0
+func (s *SecurityService) CreateUserApiKey(ctx context.Context, username string) (*ApiKey, *http.Response, error) {
+	path := fmt.Sprintf("/api/security/apiKey/%s", username)
+	req, err := s.client.NewRequest("POST", path, nil)
+	if err != nil {
+		return nil, nil, err
+	}
+	req.Header.Set("Accept", client.MediaTypeJson)
+
+	v := new(ApiKey)
+	resp, err := s.client.Do(ctx, req, v)
+	return v, resp, err
+}
+
 // Regenerate an API key for the current user
 // Since: 4.3.0
 func (s *SecurityService) RegenerateApiKey(ctx context.Context) (*ApiKey, *http.Response, error) {
