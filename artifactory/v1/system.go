@@ -4,8 +4,9 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
-	"github.com/atlassian/go-artifactory/v2/artifactory/client"
 	"net/http"
+
+	"github.com/adeelahmad84/go-artifactory/v2/artifactory/client"
 )
 
 type SystemService Service

@@ -4,8 +4,9 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/atlassian/go-artifactory/v2/artifactory/client"
 	"net/http"
+
+	"github.com/adeelahmad84/go-artifactory/v2/artifactory/client"
 )
 
 type SecurityService Service

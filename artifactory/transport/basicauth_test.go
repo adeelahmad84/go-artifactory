@@ -3,11 +3,12 @@ package transport
 import (
 	"context"
 	"fmt"
-	"github.com/atlassian/go-artifactory/v2/artifactory"
-	"github.com/stretchr/testify/assert"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	"github.com/adeelahmad84/go-artifactory/v2/artifactory"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestBasicAuthTransport(t *testing.T) {
